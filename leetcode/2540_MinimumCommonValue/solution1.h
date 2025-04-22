@@ -1,0 +1,17 @@
+#pragma once
+
+#include <vector>
+using namespace std;
+
+int getCommon(vector<int>& nums1, vector<int>& nums2) {
+	int p1 = 0, p2 = 0;
+	while (p1 < nums1.size() && p2 < nums2.size()) {
+		if (nums1[p1] < nums2[p2]) p1++;
+		else if (nums1[p1] > nums2[p2]) p2++;
+		else return nums1[p1];
+	}
+	return -1;
+}
+
+// Í¨¹ý | 56ms | 52.11MB
+// O(n+m) | O(1)
