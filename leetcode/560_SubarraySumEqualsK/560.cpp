@@ -6,6 +6,12 @@ using namespace std;
 class Solution
 {
 public:
+    virtual int subarraySum(vector<int>& nums, int k) = 0;
+};
+
+class Solution1 : virtual public Solution
+{
+public:
     int subarraySum(vector<int>& nums, int k) {
         int n = nums.size();
         vector<int> sum(n + 1, 0);
@@ -25,7 +31,7 @@ public:
 int main() {
     vector<int> nums = { 1, 1, 1 };
     int k = 2;
-    Solution* s = new Solution();
+    Solution* s = new Solution1();
     cout << s->subarraySum(nums, k) << endl;
     return 0;
 }
